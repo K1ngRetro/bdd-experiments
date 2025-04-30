@@ -15,39 +15,39 @@ This project is a hands-on sandbox for Behavior-Driven Development (BDD) using [
 ## ⚙️ Setup Instructions
 
 ### 🔁 1. Clone the Repository
-\`\`\`bash
+```bash
 git clone https://github.com/YOUR_USERNAME/bdd-experiments.git
 cd bdd-experiments
-\`\`\`
+```
 
 ### 🐍 2. Set Up a Virtual Environment
-\`\`\`bash
+```bash
 python -m venv .venv
 source .venv/Scripts/activate      # Windows
 # or
 source .venv/bin/activate          # macOS/Linux
-\`\`\`
+```
 
 ### 📦 3. Install Dependencies
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
 ### 📊 4. Install Allure CLI
 
 #### Option A: Scoop (Windows)
-\`\`\`bash
+```bash
 scoop install allure
-\`\`\`
+```
 
 #### Option B: Manually
 Download from https://github.com/allure-framework/allure2/releases and add to PATH.
 
 ### 🧪 5. Run Tests and Generate Reports
-\`\`\`bash
+```bash
 behave -f allure_behave.formatter:AllureFormatter -o reports/ features/
 allure serve reports/
-\`\`\`
+```
 
 ## 💻 Working in VS Code
 
@@ -57,12 +57,12 @@ allure serve reports/
 - GitLens
 
 ### 🧭 Setup Interpreter
-- Open Command Palette: \`Ctrl+Shift+P\`
-- Select: \`Python: Select Interpreter\`
-- Choose: \`.venv/Scripts/python.exe\`
+- Open Command Palette: `Ctrl+Shift+P`
+- Select: `Python: Select Interpreter`
+- Choose: `.venv/Scripts/python.exe`
 
 ## 🗂️ Project Structure
-\`\`\`
+```
 bdd-experiments/
 ├── features/
 │   ├── steps/
@@ -74,12 +74,12 @@ bdd-experiments/
 ├── requirements.txt
 ├── setup.sh
 └── README.md
-\`\`\`
+```
 
 ## 🚫 .gitignore
-\`\`\`
+```
 .venv/
 __pycache__/
 *.pyc
 /reports/
-\`\`\`
+```
