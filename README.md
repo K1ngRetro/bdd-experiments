@@ -1,6 +1,6 @@
-# 🧪 BDD Experiments with Behave and Allure
+# 🧪 BDD Experiments with Behave and Allure 3
 
-This project is a hands-on sandbox for Behavior-Driven Development (BDD) using [Behave](https://behave.readthedocs.io/en/stable/) and [Allure Reports](https://docs.qameta.io/allure/). It provides a collaborative testing framework with visual reporting and Python virtual environment isolation.
+This project is a hands-on sandbox for Behavior-Driven Development (BDD) using [Behave](https://behave.readthedocs.io/en/stable/) and Allure Report 3. It provides a collaborative testing framework with visual reporting and Python virtual environment isolation.
 
 ## 📦 Requirements
 
@@ -8,9 +8,8 @@ This project is a hands-on sandbox for Behavior-Driven Development (BDD) using [
 - Python 3.7+
 - Git
 - VS Code
-- Git Bash (for Windows)
 - Java Runtime (JRE or JDK) – required for Allure
-- Allure CLI (see below)
+- Allure 3 CLI (see below)
 
 ## ⚙️ Setup Instructions
 
@@ -21,11 +20,23 @@ cd bdd-experiments
 ```
 
 ### 🐍 2. Set Up a Virtual Environment
+
+macOS:
 ```bash
-python -m venv .venv
-source .venv/Scripts/activate      # Windows
-# or
-source .venv/bin/activate          # macOS/Linux
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Windows (PowerShell):
+```powershell
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+Windows (Git Bash):
+```bash
+py -m venv .venv
+source .venv/Scripts/activate
 ```
 
 ### 📦 3. Install Dependencies
@@ -33,20 +44,25 @@ source .venv/bin/activate          # macOS/Linux
 pip install -r requirements.txt
 ```
 
-### 📊 4. Install Allure CLI
+### 📊 4. Install Allure 3 CLI
 
-#### Option A: Scoop (Windows)
+macOS (Homebrew):
 ```bash
+brew install allure
+```
+
+Windows (Scoop):
+```powershell
 scoop install allure
 ```
 
-#### Option B: Manually
-Download from https://github.com/allure-framework/allure2/releases and add to PATH.
+Manual (all platforms):
+Download from https://github.com/allure-framework/allure3/releases and add to PATH.
 
 ### 🧪 5. Run Tests and Generate Reports
 ```bash
-behave -f allure_behave.formatter:AllureFormatter -o reports/ features/
-allure serve reports/
+behave -f allure_behave.formatter:AllureFormatter -o allure-results/ features/
+allure serve allure-results/
 ```
 
 ## 💻 Working in VS Code
@@ -57,9 +73,9 @@ allure serve reports/
 - GitLens
 
 ### 🧭 Setup Interpreter
-- Open Command Palette: `Ctrl+Shift+P`
+- Open Command Palette: `Cmd+Shift+P` (macOS) or `Ctrl+Shift+P` (Windows)
 - Select: `Python: Select Interpreter`
-- Choose: `.venv/Scripts/python.exe`
+- Choose: `.venv/bin/python` (macOS) or `.venv\Scripts\python.exe` (Windows)
 
 ## 🗂️ Project Structure
 ```
@@ -69,7 +85,7 @@ bdd-experiments/
 │   │   └── example_steps.py
 │   └── example.feature
 ├── .venv/                  # Not committed
-├── reports/                # Allure results
+├── allure-results/         # Allure results
 ├── .gitignore
 ├── requirements.txt
 ├── setup.sh
@@ -82,4 +98,5 @@ bdd-experiments/
 __pycache__/
 *.pyc
 /reports/
+/allure-results/
 ```
